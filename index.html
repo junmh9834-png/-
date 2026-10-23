@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>국내뽀개기 | 계획이 틀어져도, 여행은 틀어지지 않게</title>
+<meta name="description" content="취향·예산·예약 가능 여부를 반영해 국내 여행 코스를 만들고 현장에서 다시 짜 주는 앱.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="국내뽀개기 | 계획이 틀어져도, 여행은 틀어지지 않게">
+<meta property="og:description" content="취향·예산·예약 가능 여부를 반영해 국내 여행 코스를 만들고 현장에서 다시 짜 주는 앱.">
+<meta property="og:image" content="https://YOUR-GITHUB-ID.github.io/assets/og.png">
+<meta property="og:url" content="https://YOUR-GITHUB-ID.github.io/">
+<link rel="canonical" href="https://YOUR-GITHUB-ID.github.io/">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/base.css">
+<style>
+:root{--pt:#277DA1;--ink:#222;--sub:#6A6A6A;--line:#EBEBEB;--chip:#F2F2F2}
+body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var(--ink);background:#fff;font-size:14px;line-height:1.45}
+.in{padding:0 40px}
+/* 헤더 */
+.hd{background:#fff;position:sticky;top:0;z-index:20}
+.hd .top{height:80px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.hd .logo{display:flex;align-items:center;gap:6px;color:var(--pt);font-weight:800;font-size:20px;letter-spacing:-.04em}
+.hd .logo i{width:28px;height:28px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--pt);display:inline-block}
+.tabs{display:flex;gap:44px;font-size:15px;color:var(--sub)}
+.tabs a{display:flex;align-items:center;gap:8px;padding:10px 0;border-bottom:2px solid transparent}
+.tabs a.on{color:var(--ink);font-weight:600;border-color:var(--ink)}
+.tabs .ic{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#BFE3F0,#277DA1)}
+.hd .r{display:flex;justify-content:flex-end;align-items:center;gap:12px;font-size:14px;font-weight:500}
+.hd .r .c{width:42px;height:42px;border-radius:50%;background:var(--chip);display:grid;place-items:center}
+.sbar-wrap{background:linear-gradient(#fff,#F7F7F7);padding:6px 0 28px;border-bottom:1px solid var(--line)}
+.sbar{max-width:850px;margin:0 auto;height:66px;border:1px solid #DDD;border-radius:999px;box-shadow:0 3px 12px rgba(0,0,0,.1);display:grid;grid-template-columns:1fr 1fr 1fr 66px;align-items:center;background:#fff}
+.sbar div{padding:0 32px;border-right:1px solid #DDD}
+.sbar div:nth-child(3){border:0}
+.sbar b{display:block;font-size:12px;font-weight:600}
+.sbar span{font-size:14px;color:var(--sub)}
+.sbar a{width:48px;height:48px;border-radius:50%;background:var(--pt);color:#fff;display:grid;place-items:center;font-size:18px}
+/* 줄 제목 */
+.row{margin-top:40px}
+.rh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.rh h2{font-size:22px;font-weight:600;margin:0;display:flex;align-items:center;gap:8px;letter-spacing:-.02em}
+.rh h2 i{width:28px;height:28px;border-radius:50%;background:var(--chip);font-style:normal;font-size:14px;display:grid;place-items:center}
+.rh .nav{display:flex;gap:8px}.rh .nav span{width:30px;height:30px;border-radius:50%;border:1px solid #DDD;display:grid;place-items:center;font-size:12px;color:#999}
+/* 카드 7장 */
+.cards{display:grid;grid-template-columns:repeat(7,1fr);gap:12px}
+.card .pic{position:relative;aspect-ratio:1;border-radius:16px;overflow:hidden}
+.card .pill{position:absolute;left:10px;top:10px;background:rgba(255,255,255,.95);border-radius:999px;padding:4px 10px;font-size:12px;font-weight:600;z-index:2}
+.card .heart{position:absolute;right:10px;top:8px;font-size:22px;color:#fff;text-shadow:0 0 3px rgba(0,0,0,.5);z-index:2}
+.card b{display:block;margin-top:8px;font-size:14px;font-weight:600}
+.card small{display:block;color:var(--sub);font-size:13px}
+/* 흰 카드 3장 */
+.promo{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+.promo a{display:flex;align-items:center;gap:18px;border-radius:24px;box-shadow:0 6px 20px rgba(0,0,0,.08);padding:20px 22px;min-height:110px}
+.promo .ic{width:70px;height:70px;flex:none;border-radius:16px;background:linear-gradient(135deg,#FFE1CC,#FF9F68)}
+.promo h3{font-size:16px;font-weight:600;margin:0}
+.promo p{margin:2px 0 0;color:var(--sub);font-size:13px}
+.promo .btn{margin-left:auto;flex:none;background:var(--chip);border-radius:999px;padding:8px 14px;font-size:12px;font-weight:600}
+/* 신청 */
+.apply{margin-top:56px;border-top:1px solid var(--line);padding-top:40px;display:grid;grid-template-columns:1fr 420px;gap:60px}
+.apply h2{font-size:26px;font-weight:600;margin:0 0 8px}
+.apply .p{color:var(--sub);margin:0}
+.apply form{border:1px solid #DDD;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.12);padding:24px}
+.field{display:block;border:1px solid #B0B0B0;border-radius:8px;padding:8px 12px;margin-bottom:10px}
+.field span{display:block;font-size:10px;font-weight:700;text-transform:uppercase}
+.field input,.field select{width:100%;border:0;font:inherit;font-size:14px;padding:2px 0;background:transparent}
+.submit{width:100%;height:48px;border:0;border-radius:8px;background:var(--pt);color:#fff;font-size:16px;font-weight:600;margin-top:12px}
+/* 푸터 */
+.ft{background:#F7F7F7;border-top:1px solid #DDD;margin-top:60px;padding:40px 0 24px}
+.ft .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ft b{display:block;font-size:14px;margin-bottom:12px}
+.ft a{display:block;font-size:14px;margin-bottom:10px}
+.ft .bot{display:flex;justify-content:space-between;border-top:1px solid #DDD;margin-top:24px;padding-top:20px;font-size:13px;color:var(--ink)}
+@media (max-width:860px){
+  .in{padding:0 20px}.tabs{gap:20px}.tabs .ic{display:none}.hd .top{grid-template-columns:auto 1fr;height:64px}.hd .r{display:none}.tabs{justify-content:flex-end}
+  .sbar{grid-template-columns:1fr 56px;height:56px}.sbar div:nth-child(n+2){display:none}.sbar div{border:0;padding:0 20px}.sbar a{width:42px;height:42px}
+  .cards{grid-template-columns:repeat(7,42%);overflow-x:auto}
+  .promo{grid-template-columns:1fr}.apply{grid-template-columns:1fr;gap:24px}.ft .cols{grid-template-columns:1fr}
+}
+</style>
+<!-- GA4 (Day 34에 여기에 붙이기) -->
+<!-- Meta Pixel (Day 35에 여기에 붙이기) -->
+<!-- Microsoft Clarity (Day 38에 여기에 붙이기) -->
+<!-- Schema JSON-LD (Day 29) -->
+</head>
+<body>
+<header class="hd">
+  <div class="in top">
+    <a class="logo" href="./"><i></i>국내뽀개기</a>
+    <nav class="tabs"><a href="#apply" class="on"><span class="ic"></span>코스</a><a href="#apply" class=""><span class="ic"></span>숙소</a><a href="#apply" class=""><span class="ic"></span>입장권</a></nav>
+    <div class="r"><a href="#apply" id="cta-top">출시 알림</a><span class="c">◯</span><span class="c">≡</span></div>
+  </div>
+  <div class="sbar-wrap"><div class="sbar">
+    <div><b>어디로</b><span>여행지 검색</span></div>
+    <div><b>누구와</b><span>친구 3명</span></div>
+    <div><b>얼마로</b><span>예산 추가</span></div>
+    <a href="#apply" aria-label="코스 만들기">⌕</a>
+  </div></div>
+</header>
+
+<main class="in">
+<section class="row">
+  <div class="rh"><h2>이런 코스는 어떠세요? <i>→</i></h2><div class="nav"><span>‹</span><span>›</span></div></div>
+  <div class="cards">
+    <a class="card" href="#apply"><div class="pic"><span class="heart">♡</span><div class="ph "><span>강원 여행 사진</span></div></div><b>강원 · <span class="todo">코스 이름</span></b><small><span class="todo">일정 요약</span></small><small>1박 2일 · ★ <span class="todo">평점</span></small></a>
+    <a class="card" href="#apply"><div class="pic"><span class="pill">게스트 선호</span><span class="heart">♡</span><div class="ph "><span>제주 여행 사진</span></div></div><b>제주 · <span class="todo">코스 이름</span></b><small><span class="todo">일정 요약</span></small><small>1박 2일 · ★ <span class="todo">평점</span></small></a>
+    <a class="card" href="#apply"><div class="pic"><span class="heart">♡</span><div class="ph "><span>부산 여행 사진</span></div></div><b>부산 · <span class="todo">코스 이름</span></b><small><span class="todo">일정 요약</span></small><small>1박 2일 · ★ <span class="todo">평점</span></small></a>
+    <a class="card" href="#apply"><div class="pic"><span class="pill">게스트 선호</span><span class="heart">♡</span><div class="ph "><span>전주 여행 사진</span></div></div><b>전주 · <span class="todo">코스 이름</span></b><small><span class="todo">일정 요약</span></small><small>1박 2일 · ★ <span class="todo">평점</span></small></a>
+    <a class="card" href="#apply"><div class="pic"><span class="heart">♡</span><div class="ph "><span>강원 여행 사진</span></div></div><b>강원 · <span class="todo">코스 이름</span></b><small><span class="todo">일정 요약</span></small><small>1박 2일 · ★ <span class="todo">평점</span></small></a>
+    <a class="card" href="#apply"><div class="pic"><span class="pill">게스트 선호</span><span class="heart">♡</span><div class="ph "><span>제주 여행 사진</span></div></div><b>제주 · <span class="todo">코스 이름</span></b><small><span class="todo">일정 요약</span></small><small>1박 2일 · ★ <span class="todo">평점</span></small></a>
+    <a class="card" href="#apply"><div class="pic"><span class="heart">♡</span><div class="ph "><span>부산 여행 사진</span></div></div><b>부산 · <span class="todo">코스 이름</span></b><small><span class="todo">일정 요약</span></small><small>1박 2일 · ★ <span class="todo">평점</span></small></a>
+  </div>
+</section>
+
+<section class="promo">
+  <a href="#apply"><span class="ic"></span><div><h3>코스 자동 생성</h3><p>취향·예산·이동 수단을 넣으면 하루 코스를 만듭니다.</p></div><span class="btn">기능 보기</span></a>
+  <a href="#apply"><span class="ic"></span><div><h3>예약까지 한 번에</h3><p>코스 속 숙소와 입장권을 바로 예약합니다.</p></div><span class="btn">기능 보기</span></a>
+  <a href="#apply"><span class="ic"></span><div><h3>현장 재계획</h3><p>비가 오거나 마감되면 그 자리에서 코스를 다시 짭니다.</p></div><span class="btn">기능 보기</span></a>
+</section>
+
+<section class="row" id="course">
+  <div class="rh"><h2>출발 3일 전에도 충분해요 <i>→</i></h2><div class="nav"><span>‹</span><span>›</span></div></div>
+  <div class="cards">
+    <a class="card" href="#apply"><div class="pic"><span class="pill">1박 2일</span><span class="heart">♡</span><div class="ph "><span>1박 2일 코스 사진</span></div></div><b>1박 2일 추천 코스</b><small>취향 입력 → 코스 받기</small><small><span class="todo">예상 비용</span></small></a>
+    <a class="card" href="#apply"><div class="pic"><span class="pill">뚜벅이</span><span class="heart">♡</span><div class="ph "><span>뚜벅이 코스 사진</span></div></div><b>뚜벅이 추천 코스</b><small>코스 받기 → 예약·출발</small><small><span class="todo">예상 비용</span></small></a>
+    <a class="card" href="#apply"><div class="pic"><span class="pill">비 오는 날</span><span class="heart">♡</span><div class="ph "><span>비 오는 날 코스 사진</span></div></div><b>비 오는 날 추천 코스</b><small>예약·출발 → 취향 입력</small><small><span class="todo">예상 비용</span></small></a>
+    <a class="card" href="#apply"><div class="pic"><span class="heart">♡</span><div class="ph "><span>반려견 동반 코스 사진</span></div></div><b>반려견 동반 추천 코스</b><small>취향 입력 → 코스 받기</small><small><span class="todo">예상 비용</span></small></a>
+    <a class="card" href="#apply"><div class="pic"><span class="heart">♡</span><div class="ph "><span>1박 2일 코스 사진</span></div></div><b>1박 2일 추천 코스</b><small>코스 받기 → 예약·출발</small><small><span class="todo">예상 비용</span></small></a>
+    <a class="card" href="#apply"><div class="pic"><span class="heart">♡</span><div class="ph "><span>뚜벅이 코스 사진</span></div></div><b>뚜벅이 추천 코스</b><small>예약·출발 → 취향 입력</small><small><span class="todo">예상 비용</span></small></a>
+    <a class="card" href="#apply"><div class="pic"><span class="heart">♡</span><div class="ph "><span>비 오는 날 코스 사진</span></div></div><b>비 오는 날 추천 코스</b><small>취향 입력 → 코스 받기</small><small><span class="todo">예상 비용</span></small></a>
+  </div>
+</section>
+
+<section class="row">
+  <div class="rh"><h2>이렇게 써요 <i>→</i></h2></div>
+  <div class="cards" style="grid-template-columns:repeat(3,1fr)">
+    <div class="card"><div class="pic" style="aspect-ratio:16/10"><div class="ph "><span><span class="todo">앱 UXUI 화면</span></span></div></div><b>1. 취향 입력</b><small>누구와, 얼마로, 무엇을 하고 싶은지 고릅니다.</small></div>
+    <div class="card"><div class="pic" style="aspect-ratio:16/10"><div class="ph "><span>코스 받기 화면</span></div></div><b>2. 코스 받기</b><small>추천 코스 중 마음에 드는 것을 고릅니다.</small></div>
+    <div class="card"><div class="pic" style="aspect-ratio:16/10"><div class="ph "><span>예약·출발 화면</span></div></div><b>3. 예약·출발</b><small>필요한 예약을 끝내고 떠납니다.</small></div>
+  </div>
+</section>
+
+<section class="apply" id="apply">
+  <div><h2>여행이 필요할 때, 국내뽀개기</h2><p class="p">계획이 틀어져도, 여행은 틀어지지 않게. 취향과 예산을 넣으면 코스를 만들고, 현장에서 일정이 바뀌면 다시 짜 드려요.</p><p class="p" style="margin-top:14px"><a href="#course" id="cta-main" style="text-decoration:underline;font-weight:600;color:var(--ink)">앱 출시 알림 받기</a></p></div>
+  <form id="lead-form" action="result.html" method="get" autocomplete="off" novalidate>
+    <p style="font-size:20px;font-weight:600;margin:0 0 4px">출시 알림 받기</p>
+    <p class="p" style="color:var(--sub);margin:0 0 16px">앱이 출시되면 가장 먼저 알려 드립니다.</p>
+    <label class="field"><span>이름</span><input id="f-name" type="text" required maxlength="20" placeholder="홍길동"></label>
+<label class="field"><span>연락처</span><input id="f-contact" type="tel" required pattern="[0-9\- ]{9,14}" placeholder="010-0000-0000"></label>
+<label class="field"><span>다음 여행지</span><select id="f-select" required><option value="">선택해 주세요</option><option>강원</option><option>제주</option><option>부산·경남</option><option>전라</option><option>충청</option><option>수도권</option></select></label>
+
+    <div class="safe-note"><span aria-hidden="true">🔒</span><div>입력한 정보는 <b>어디에도 전송·저장되지 않고</b> 완료 즉시 지워집니다. <button type="button" data-privacy-open>자세히 보기</button></div></div>
+    <button class="submit" type="submit" id="cta-submit">앱 출시 알림 받기</button>
+  </form>
+</section>
+</main>
+
+<footer class="ft"><div class="in">
+  <div class="cols">
+    <div><b>국내뽀개기 지원</b><a href="#apply">도움말</a><a href="#" data-privacy-open>개인정보 처리 안내</a></div>
+    <div><b>코스</b><a href="#course">코스</a><a href="#course">숙소</a><a href="#course">입장권</a><a href="#course">현장 재계획</a></div>
+    <div><b>국내뽀개기</b><a href="#apply">앱 출시 알림 받기</a><a href="#">Instagram</a></div>
+  </div>
+  <div class="bot"><span>이 페이지는 수업 실습용 페이지입니다. 실제 판매·결제는 이루어지지 않으며, 표기된 수치·후기는 예시입니다.</span><span>🌐 한국어 · ₩ KRW</span></div>
+</div></footer>
+<div class="modal" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title" aria-hidden="true">
+  <div class="modal-box">
+    <span class="badge">개인정보 미수집 · 즉시 파기</span>
+    <h2 id="privacy-title">개인정보 처리 안내</h2>
+    <ol>
+      <li><strong>입력하신 정보는 절대 저장하지 않습니다.</strong> 서버, 데이터베이스, 스프레드시트, 이메일, 외부 서비스 어디로도 전송되지 않습니다.</li>
+      <li>입력값은 이 브라우저 화면에만 잠시 머물며, 완료 버튼을 누르는 <strong>즉시 화면에서 지워집니다.</strong> 쿠키나 브라우저 저장소에도 남기지 않습니다.</li>
+      <li>페이지 제작자와 강사를 포함한 <strong>누구도 입력값을 볼 수 없습니다.</strong></li>
+    </ol>
+    <label><input type="checkbox" id="privacy-agree"> 위 내용을 확인했으며, 입력값이 저장되지 않고 즉시 파기된다는 점에 동의합니다.</label>
+    <div class="modal-actions">
+      <button type="button" class="cancel" id="privacy-cancel">닫기</button>
+      <button type="button" class="ok" id="privacy-ok" disabled>확인했습니다</button>
+    </div>
+  </div>
+</div><script src="assets/privacy.js"></script>
+</body>
+</html>
