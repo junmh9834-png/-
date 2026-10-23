@@ -44,6 +44,16 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .sbar select{display:block;width:100%;margin:0;border:0;background:transparent;color:var(--sub);font:inherit;font-size:14px;text-align:left;padding:2px 24px 2px 0;outline:0;cursor:pointer;-webkit-appearance:none;appearance:none;text-indent:0}
 .sbar>a{width:50px;height:50px;border-radius:50%;background:#0561E3;color:#fff;display:grid;place-items:center}
 .sbar>a svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2.8;stroke-linecap:round}
+/* 상단 출시 알림 */
+.signup-hero{display:grid;grid-template-columns:minmax(320px,.68fr) minmax(520px,1.32fr);gap:42px;align-items:stretch;padding:48px 0 28px}
+.signup-card{border:1px solid #DDD;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.12);padding:26px 24px;background:#fff}
+.signup-card h2{font-size:24px;font-weight:700;margin:0 0 4px}
+.signup-card>.intro{color:var(--sub);margin:0 0 18px}
+.signup-card .field{padding:9px 12px;margin-bottom:10px}
+.signup-card .safe-note{margin-top:12px}
+.signup-card .submit{background:#5086A8}
+.pet-hero{min-height:425px;border-radius:0;overflow:hidden}
+.pet-hero img{width:100%;height:100%;object-fit:cover;display:block}
 /* 줄 제목 */
 .row{margin-top:40px}
 .rh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
@@ -81,7 +91,8 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .ft a{display:block;font-size:14px;margin-bottom:10px}
 .ft .bot{display:flex;justify-content:space-between;border-top:1px solid #DDD;margin-top:24px;padding-top:20px;font-size:13px;color:var(--ink)}
 @media (max-width:860px){
-  .in{padding:0 20px}.hd .top{grid-template-columns:auto 1fr;min-height:72px;gap:12px}.hd .logo img{width:132px}.hd .r{display:none}.tabs{justify-content:flex-end;gap:10px}.tabs a{gap:4px;font-size:12px;padding:10px 0}.tabs img{width:28px;height:28px}
+  .in{padding:0 20px}.signup-hero{grid-template-columns:1fr;gap:20px;padding-top:28px}.pet-hero{min-height:320px;order:-1}
+.hd .top{grid-template-columns:auto 1fr;min-height:72px;gap:12px}.hd .logo img{width:132px}.hd .r{display:none}.tabs{justify-content:flex-end;gap:10px}.tabs a{gap:4px;font-size:12px;padding:10px 0}.tabs img{width:28px;height:28px}
   .sbar{grid-template-columns:1fr 1fr 1fr 48px;height:64px;margin:0 12px}.sbar>div,.sbar>.pref-field{padding:0 12px}.sbar>a{width:42px;height:42px}.sbar span,.sbar select{font-size:12px}
   .cards{grid-template-columns:repeat(7,42%);overflow-x:auto}
   .promo{grid-template-columns:1fr}.apply{grid-template-columns:1fr;gap:24px}.ft .cols{grid-template-columns:1fr}
@@ -123,6 +134,18 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 </header>
 
 <main class="in">
+<section class="signup-hero" id="apply">
+  <form class="signup-card" id="lead-form" action="result.html" method="get" autocomplete="off" novalidate>
+    <h2>출시 알림 받기</h2>
+    <p class="intro">앱이 출시되면 가장 먼저 알려 드립니다.</p>
+    <label class="field"><span>이름</span><input id="f-name" type="text" required maxlength="20" placeholder="홍길동"></label>
+    <label class="field"><span>연락처</span><input id="f-contact" type="tel" required pattern="[0-9\- ]{9,14}" placeholder="010-0000-0000"></label>
+    <label class="field"><span>다음 여행지</span><select id="f-select" required><option value="">선택해 주세요</option><option>강원</option><option>제주</option><option>부산·경남</option><option>전라</option><option>충청</option><option>수도권</option></select></label>
+    <div class="safe-note"><span aria-hidden="true">🔒</span><div>입력한 정보는 <b>어디에도 전송·저장되지 않고</b> 완료 즉시 지워집니다. <button type="button" data-privacy-open>자세히 보기</button></div></div>
+    <button class="submit" type="submit" id="cta-submit">앱 출시 알림 받기</button>
+  </form>
+  <div class="pet-hero"><img src="assets/pet-travel-hero.png" alt="잔디밭을 달리는 반려견들과 반려동물 동반 여행 안내"></div>
+</section>
 <section class="row">
   <div class="rh"><h2>이런 코스는 어떠세요? <i>→</i></h2><div class="nav"><span>‹</span><span>›</span></div></div>
   <div class="cards">
@@ -164,19 +187,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
   </div>
 </section>
 
-<section class="apply" id="apply">
-  <div><h2>여행이 필요할 때, 국내뽀개기</h2><p class="p">계획이 틀어져도, 여행은 틀어지지 않게. 취향과 예산을 넣으면 코스를 만들고, 현장에서 일정이 바뀌면 다시 짜 드려요.</p><p class="p" style="margin-top:14px"><a href="#course" id="cta-main" style="text-decoration:underline;font-weight:600;color:var(--ink)">앱 출시 알림 받기</a></p></div>
-  <form id="lead-form" action="result.html" method="get" autocomplete="off" novalidate>
-    <p style="font-size:20px;font-weight:600;margin:0 0 4px">출시 알림 받기</p>
-    <p class="p" style="color:var(--sub);margin:0 0 16px">앱이 출시되면 가장 먼저 알려 드립니다.</p>
-    <label class="field"><span>이름</span><input id="f-name" type="text" required maxlength="20" placeholder="홍길동"></label>
-<label class="field"><span>연락처</span><input id="f-contact" type="tel" required pattern="[0-9\- ]{9,14}" placeholder="010-0000-0000"></label>
-<label class="field"><span>다음 여행지</span><select id="f-select" required><option value="">선택해 주세요</option><option>강원</option><option>제주</option><option>부산·경남</option><option>전라</option><option>충청</option><option>수도권</option></select></label>
 
-    <div class="safe-note"><span aria-hidden="true">🔒</span><div>입력한 정보는 <b>어디에도 전송·저장되지 않고</b> 완료 즉시 지워집니다. <button type="button" data-privacy-open>자세히 보기</button></div></div>
-    <button class="submit" type="submit" id="cta-submit">앱 출시 알림 받기</button>
-  </form>
-</section>
 </main>
 
 <footer class="ft"><div class="in">
