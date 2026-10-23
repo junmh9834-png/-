@@ -28,6 +28,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .tabs img{width:42px;height:42px;object-fit:contain}
 .hd .r{display:flex;flex-direction:column;align-items:flex-end;gap:10px;font-size:12px;font-weight:600}
 .account-links,.quick-links{display:flex;align-items:center;gap:16px}
+.quick-links{transform:translateX(-20px)}
 .account-links a{padding-bottom:2px;border-bottom:1px solid transparent}
 .account-links a:hover{border-color:currentColor}
 .quick-links a{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:48px}
@@ -36,11 +37,12 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .sbar-wrap{background:linear-gradient(#fff,#F7F7F7);padding:6px 0 28px;border-bottom:1px solid var(--line)}
 .sbar{max-width:850px;margin:0 auto;height:66px;border:1px solid #DDD;border-radius:999px;box-shadow:0 3px 12px rgba(0,0,0,.1);display:grid;grid-template-columns:1fr 1fr 1fr 66px;align-items:center;background:#fff}
 .sbar>div,.sbar>.pref-field{padding:0 32px;border-right:1px solid #DDD}
-.sbar>.pref-field{display:block;cursor:pointer}
+.sbar>.pref-field{display:block;cursor:pointer;text-align:left}
 .sbar b,.sbar>.pref-field>b{display:block;font-size:12px;font-weight:600}
 .sbar span{font-size:14px;color:var(--sub)}
-.sbar select{display:block;width:100%;border:0;background:transparent;color:var(--sub);font:inherit;font-size:14px;padding:2px 24px 2px 0;outline:0;cursor:pointer}
-.sbar a{width:48px;height:48px;border-radius:50%;background:var(--pt);color:#fff;display:grid;place-items:center;font-size:18px}
+.sbar select{display:block;width:100%;margin:0;border:0;background:transparent;color:var(--sub);font:inherit;font-size:14px;text-align:left;padding:2px 24px 2px 0;outline:0;cursor:pointer}
+.sbar>a{width:58px;height:58px;border-radius:50%;background:#0561E3;color:#fff;display:grid;place-items:center}
+.sbar>a svg{width:27px;height:27px;fill:none;stroke:currentColor;stroke-width:2.8;stroke-linecap:round}
 /* 줄 제목 */
 .row{margin-top:40px}
 .rh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
@@ -78,7 +80,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .ft .bot{display:flex;justify-content:space-between;border-top:1px solid #DDD;margin-top:24px;padding-top:20px;font-size:13px;color:var(--ink)}
 @media (max-width:860px){
   .in{padding:0 20px}.hd .top{grid-template-columns:auto 1fr;min-height:72px;gap:12px}.hd .logo img{width:132px}.hd .r{display:none}.tabs{justify-content:flex-end;gap:10px}.tabs a{gap:4px;font-size:12px;padding:10px 0}.tabs img{width:28px;height:28px}
-  .sbar{grid-template-columns:1fr 1fr 1fr 48px;height:64px;margin:0 12px}.sbar>div,.sbar>.pref-field{padding:0 12px}.sbar a{width:40px;height:40px}.sbar span,.sbar select{font-size:12px}
+  .sbar{grid-template-columns:1fr 1fr 1fr 48px;height:64px;margin:0 12px}.sbar>div,.sbar>.pref-field{padding:0 12px}.sbar>a{width:46px;height:46px}.sbar span,.sbar select{font-size:12px}
   .cards{grid-template-columns:repeat(7,42%);overflow-x:auto}
   .promo{grid-template-columns:1fr}.apply{grid-template-columns:1fr;gap:24px}.ft .cols{grid-template-columns:1fr}
 }
@@ -114,7 +116,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
     <div><b>어디로</b><span>여행지 검색</span></div>
     <div><b>누구와</b><span>친구 3명</span></div>
     <label class="pref-field"><b>취향</b><select id="travel-style" aria-label="여행 취향 선택"><option value="">취향 선택</option><option>액티비티형</option><option>휴양·힐링형</option><option>문화·역사 탐방형</option><option>로컬체험형</option></select></label>
-    <a href="#apply" aria-label="코스 만들기">⌕</a>
+    <a href="#apply" aria-label="코스 만들기"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m15.5 15.5 5 5"></path></svg></a>
   </div></div>
 </header>
 
