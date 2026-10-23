@@ -28,21 +28,21 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .tabs img{width:42px;height:42px;object-fit:contain}
 .hd .r{display:flex;flex-direction:column;align-items:flex-end;gap:10px;font-size:12px;font-weight:600}
 .account-links,.quick-links{display:flex;align-items:center;gap:16px}
-.quick-links{transform:translateX(-20px)}
+.quick-links{transform:translateX(10px)}
 .account-links a{padding-bottom:2px;border-bottom:1px solid transparent}
 .account-links a:hover{border-color:currentColor}
 .quick-links a{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:48px}
 .quick-links svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .quick-links span{font-size:11px;color:var(--sub)}
-.sbar-wrap{background:linear-gradient(#fff,#F7F7F7);padding:6px 0 28px;border-bottom:1px solid var(--line)}
+.sbar-wrap{background:linear-gradient(to bottom,#fff 0%,#fff 18%,#99B7F9 100%);padding:6px 0 28px;border-bottom:1px solid #99B7F9}
 .sbar{max-width:850px;margin:0 auto;height:66px;border:1px solid #DDD;border-radius:999px;box-shadow:0 3px 12px rgba(0,0,0,.1);display:grid;grid-template-columns:1fr 1fr 1fr 66px;align-items:center;background:#fff}
 .sbar>div,.sbar>.pref-field{padding:0 32px;border-right:1px solid #DDD}
 .sbar>.pref-field{display:block;cursor:pointer;text-align:left}
 .sbar b,.sbar>.pref-field>b{display:block;font-size:12px;font-weight:600}
 .sbar span{font-size:14px;color:var(--sub)}
 .sbar select{display:block;width:100%;margin:0;border:0;background:transparent;color:var(--sub);font:inherit;font-size:14px;text-align:left;padding:2px 24px 2px 0;outline:0;cursor:pointer}
-.sbar>a{width:58px;height:58px;border-radius:50%;background:#0561E3;color:#fff;display:grid;place-items:center}
-.sbar>a svg{width:27px;height:27px;fill:none;stroke:currentColor;stroke-width:2.8;stroke-linecap:round}
+.sbar>a{width:50px;height:50px;border-radius:50%;background:#0561E3;color:#fff;display:grid;place-items:center}
+.sbar>a svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2.8;stroke-linecap:round}
 /* 줄 제목 */
 .row{margin-top:40px}
 .rh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
@@ -80,7 +80,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .ft .bot{display:flex;justify-content:space-between;border-top:1px solid #DDD;margin-top:24px;padding-top:20px;font-size:13px;color:var(--ink)}
 @media (max-width:860px){
   .in{padding:0 20px}.hd .top{grid-template-columns:auto 1fr;min-height:72px;gap:12px}.hd .logo img{width:132px}.hd .r{display:none}.tabs{justify-content:flex-end;gap:10px}.tabs a{gap:4px;font-size:12px;padding:10px 0}.tabs img{width:28px;height:28px}
-  .sbar{grid-template-columns:1fr 1fr 1fr 48px;height:64px;margin:0 12px}.sbar>div,.sbar>.pref-field{padding:0 12px}.sbar>a{width:46px;height:46px}.sbar span,.sbar select{font-size:12px}
+  .sbar{grid-template-columns:1fr 1fr 1fr 48px;height:64px;margin:0 12px}.sbar>div,.sbar>.pref-field{padding:0 12px}.sbar>a{width:42px;height:42px}.sbar span,.sbar select{font-size:12px}
   .cards{grid-template-columns:repeat(7,42%);overflow-x:auto}
   .promo{grid-template-columns:1fr}.apply{grid-template-columns:1fr;gap:24px}.ft .cols{grid-template-columns:1fr}
 }
