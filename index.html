@@ -20,8 +20,8 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 /* 헤더 */
 .hd{background:#fff;position:sticky;top:0;z-index:20}
 .hd .top{height:80px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
-.hd .logo{display:flex;align-items:center;gap:6px;color:var(--pt);font-weight:800;font-size:20px;letter-spacing:-.04em}
-.hd .logo i{width:28px;height:28px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--pt);display:inline-block}
+.hd .logo{display:flex;align-items:center;text-decoration:none}
+.hd .logo img{display:block;width:174px;height:auto}
 .tabs{display:flex;gap:44px;font-size:15px;color:var(--sub)}
 .tabs a{display:flex;align-items:center;gap:8px;padding:10px 0;border-bottom:2px solid transparent}
 .tabs a.on{color:var(--ink);font-weight:600;border-color:var(--ink)}
@@ -85,7 +85,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 <body>
 <header class="hd">
   <div class="in top">
-    <a class="logo" href="./"><i></i>국내뽀개기</a>
+    <a class="logo" href="./"><img src="assets/logo-text.png" alt="국내뽀개기"></a>
     <nav class="tabs"><a href="#apply" class="on"><span class="ic"></span>코스</a><a href="#apply" class=""><span class="ic"></span>숙소</a><a href="#apply" class=""><span class="ic"></span>입장권</a></nav>
     <div class="r"><a href="#apply" id="cta-top">출시 알림</a><span class="c">◯</span><span class="c">≡</span></div>
   </div>
