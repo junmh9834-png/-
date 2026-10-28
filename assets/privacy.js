@@ -44,9 +44,16 @@
 
   ok.addEventListener('click', function () {
     if (mode !== 'submit') { close(); return; }
+    var destination = (document.getElementById('f-select') || {}).value || '';
     wipe();
-    // 분석 도구를 붙였다면 여기서 개인정보 없이 이벤트 이름만 보냅니다 (Day 34~35).
-    if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead');
+    // 이름·연락처는 보내지 않고 선택한 여행지만 비식별 파라미터로 전송합니다.
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'generate_lead', {
+        lead_source: 'website_launch_notification',
+        lead_type: 'app_launch_notification',
+        destination: destination
+      });
+    }
     if (typeof window.fbq === 'function') window.fbq('track', 'Lead');
     location.replace('result.html');
   });
@@ -59,6 +66,12 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'lead_form_submit_attempt', {
+          form_id: 'lead-form',
+          destination: (document.getElementById('f-select') || {}).value || ''
+        });
+      }
       open('submit');
     });
   }
