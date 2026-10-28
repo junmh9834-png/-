@@ -83,11 +83,15 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .apply{margin-top:56px;border-top:1px solid var(--line);padding-top:40px;display:grid;grid-template-columns:1fr 420px;gap:60px}
 .apply h2{font-size:26px;font-weight:600;margin:0 0 8px}
 .apply .p{color:var(--sub);margin:0}
-.apply form{border:1px solid #DDD;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.12);padding:24px}
-.field{display:block;border:1px solid #B0B0B0;border-radius:8px;padding:8px 12px;margin-bottom:10px}
-.field span{display:block;font-size:10px;font-weight:700;text-transform:uppercase}
-.field input,.field select{width:100%;border:0;font:inherit;font-size:14px;padding:2px 0;background:transparent}
-.submit{width:100%;height:48px;border:0;border-radius:8px;background:var(--pt);color:#fff;font-size:16px;font-weight:600;margin-top:12px}
+.apply form{border:1px solid #DDD;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.12);padding:18px}
+.apply form .form-title{font-size:17px;font-weight:700;margin:0 0 3px}
+.apply form .form-intro{color:var(--sub);font-size:12px;margin:0 0 10px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.field{display:block;border:1px solid #B0B0B0;border-radius:8px;padding:6px 10px;margin-bottom:8px}
+.field span{display:block;font-size:9px;font-weight:700;text-transform:uppercase}
+.field input,.field select{width:100%;border:0;font:inherit;font-size:12px;padding:1px 0;background:transparent}
+.submit{width:100%;height:40px;border:0;border-radius:8px;background:var(--pt);color:#fff;font-size:14px;font-weight:700;margin:0 0 8px}
+.apply .safe-note{font-size:11px;padding:8px 10px;line-height:1.4}
 /* 푸터 */
 .ft{background:#F7F7F7;border-top:1px solid #DDD;margin-top:60px;padding:40px 0 24px}
 .ft .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -99,7 +103,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
   .in{padding:0 20px}.hd .top{grid-template-columns:auto 1fr;min-height:56px;gap:12px}.right-actions{gap:8px}.right-actions .join-link{padding:7px 10px}.hd .r{display:none}.tabs{justify-content:flex-end;gap:10px}.tabs a{gap:4px;font-size:12px;padding:10px 0}.tabs img{width:28px;height:28px}
   .sbar{grid-template-columns:1fr 1fr 1fr 48px;height:64px;margin:0 12px}.sbar>div,.sbar>.pref-field{padding:0 12px}.sbar>a{width:42px;height:42px}.sbar b,.sbar>.pref-field>b,.sbar span,.sbar select{font-size:12px}
   .cards{grid-template-columns:repeat(7,42%);overflow-x:auto}
-  .promo{grid-template-columns:1fr}.apply{grid-template-columns:1fr;gap:24px}.ft .cols{grid-template-columns:1fr}
+  .promo{grid-template-columns:1fr}.apply{grid-template-columns:1fr;gap:24px}.field-row{grid-template-columns:1fr}.ft .cols{grid-template-columns:1fr}
 }
 @media (max-width:600px){
   .hd .top{display:block;padding-top:8px}.logo{justify-content:center}.right-actions{justify-content:center;margin:6px 0}.tabs{justify-content:center;overflow-x:auto}.sbar{grid-template-columns:1fr 1fr 48px}.sbar>div:nth-child(2){display:none}.sbar>div,.sbar>.pref-field{border-right:1px solid #DDD}
@@ -166,14 +170,15 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 <section class="apply" id="apply">
   <div><h2>여행이 필요할 때, 국내뽀개기</h2><p class="p">계획이 틀어져도, 여행은 틀어지지 않게. 취향과 예산을 넣으면 코스를 만들고, 현장에서 일정이 바뀌면 다시 짜 드려요.</p><p class="p" style="margin-top:14px"><a href="#course" id="cta-main" data-ga="cta_click" data-ga-cta-name="launch_notification" data-ga-cta-location="apply_intro" style="text-decoration:underline;font-weight:600;color:var(--ink)">앱 출시 알림 받기</a></p></div>
   <form id="lead-form" action="result.html" method="get" autocomplete="off" novalidate>
-    <p style="font-size:20px;font-weight:600;margin:0 0 4px">출시 알림 받기</p>
-    <p class="p" style="color:var(--sub);margin:0 0 16px">앱이 출시되면 가장 먼저 알려 드립니다.</p>
-    <label class="field"><span>이름</span><input id="f-name" type="text" required maxlength="20" placeholder="홍길동"></label>
-<label class="field"><span>연락처</span><input id="f-contact" type="tel" required pattern="[0-9\- ]{9,14}" placeholder="010-0000-0000"></label>
-<label class="field"><span>다음 여행지</span><select id="f-select" required><option value="">선택해 주세요</option><option>강원</option><option>제주</option><option>부산·경남</option><option>전라</option><option>충청</option><option>수도권</option></select></label>
-
-    <div class="safe-note"><span aria-hidden="true">🔒</span><div>입력한 정보는 <b>어디에도 전송·저장되지 않고</b> 완료 즉시 지워집니다. <button type="button" data-privacy-open>자세히 보기</button></div></div>
+    <p class="form-title">출시 알림 받기</p>
+    <p class="form-intro">앱이 출시되면 가장 먼저 알려 드립니다.</p>
+    <div class="field-row">
+      <label class="field"><span>이름</span><input id="f-name" type="text" required maxlength="20" placeholder="홍길동"></label>
+      <label class="field"><span>연락처</span><input id="f-contact" type="tel" required pattern="[0-9\- ]{9,14}" placeholder="010-0000-0000"></label>
+    </div>
+    <label class="field"><span>다음 여행지</span><select id="f-select" required><option value="">선택해 주세요</option><option>강원</option><option>제주</option><option>부산·경남</option><option>전라</option><option>충청</option><option>수도권</option></select></label>
     <button class="submit" type="submit" id="cta-submit">앱 출시 알림 받기</button>
+    <div class="safe-note"><span aria-hidden="true">🔒</span><div>입력한 정보는 <b>어디에도 전송·저장되지 않고</b> 완료 즉시 지워집니다. <button type="button" data-privacy-open>자세히 보기</button></div></div>
   </form>
 </section>
 </main>
