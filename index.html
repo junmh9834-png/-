@@ -90,7 +90,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
   .hd .top{display:block;padding-top:14px}.hd .logo{justify-content:center}.tabs{justify-content:center;overflow-x:auto}.sbar{grid-template-columns:1fr 1fr 48px}.sbar>div:nth-child(2){display:none}.sbar>div,.sbar>.pref-field{border-right:1px solid #DDD}
 }
 </style>
-<!-- GA4 (Day 34에 여기에 붙이기) -->
+<script src="ga4-easy.js" data-id="G-LX1KWCTXC2"></script>
 <!-- Meta Pixel (Day 35에 여기에 붙이기) -->
 <!-- Microsoft Clarity (Day 38에 여기에 붙이기) -->
 <!-- Schema JSON-LD (Day 29) -->
@@ -118,7 +118,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
     <div><b>어디로</b><span>여행지 검색</span></div>
     <div><b>누구와</b><span>친구 3명</span></div>
     <label class="pref-field"><b>취향</b><select id="travel-style" aria-label="여행 취향 선택"><option value="">취향 선택</option><option>액티비티형</option><option>휴양·힐링형</option><option>문화·역사 탐방형</option><option>로컬체험형</option><option>뚜벅이형</option><option>반려동물동반형</option></select></label>
-    <a href="#apply" aria-label="코스 만들기"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m15.5 15.5 5 5"></path></svg></a>
+    <a href="#apply" aria-label="코스 만들기" data-ga="course_builder_start" data-ga-cta-location="header_search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m15.5 15.5 5 5"></path></svg></a>
   </div></div>
 </header>
 
@@ -165,7 +165,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 </section>
 
 <section class="apply" id="apply">
-  <div><h2>여행이 필요할 때, 국내뽀개기</h2><p class="p">계획이 틀어져도, 여행은 틀어지지 않게. 취향과 예산을 넣으면 코스를 만들고, 현장에서 일정이 바뀌면 다시 짜 드려요.</p><p class="p" style="margin-top:14px"><a href="#course" id="cta-main" style="text-decoration:underline;font-weight:600;color:var(--ink)">앱 출시 알림 받기</a></p></div>
+  <div><h2>여행이 필요할 때, 국내뽀개기</h2><p class="p">계획이 틀어져도, 여행은 틀어지지 않게. 취향과 예산을 넣으면 코스를 만들고, 현장에서 일정이 바뀌면 다시 짜 드려요.</p><p class="p" style="margin-top:14px"><a href="#course" id="cta-main" data-ga="cta_click" data-ga-cta-name="launch_notification" data-ga-cta-location="apply_intro" style="text-decoration:underline;font-weight:600;color:var(--ink)">앱 출시 알림 받기</a></p></div>
   <form id="lead-form" action="result.html" method="get" autocomplete="off" novalidate>
     <p style="font-size:20px;font-weight:600;margin:0 0 4px">출시 알림 받기</p>
     <p class="p" style="color:var(--sub);margin:0 0 16px">앱이 출시되면 가장 먼저 알려 드립니다.</p>
@@ -183,7 +183,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
   <div class="cols">
     <div><b>국내뽀개기 지원</b><a href="#apply">도움말</a><a href="#" data-privacy-open>개인정보 처리 안내</a></div>
     <div><b>코스</b><a href="#course">코스</a><a href="#course">숙소</a><a href="#course">입장권</a><a href="#course">현장 재계획</a></div>
-    <div><b>국내뽀개기</b><a href="#apply">앱 출시 알림 받기</a><a href="#">Instagram</a></div>
+    <div><b>국내뽀개기</b><a href="#apply" data-ga="cta_click" data-ga-cta-name="launch_notification" data-ga-cta-location="footer">앱 출시 알림 받기</a><a href="#">Instagram</a></div>
   </div>
   <div class="bot"><span>이 페이지는 수업 실습용 페이지입니다. 실제 판매·결제는 이루어지지 않으며, 표기된 수치·후기는 예시입니다.</span><span>🌐 한국어 · ₩ KRW</span></div>
 </div></footer>
