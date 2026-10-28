@@ -18,7 +18,7 @@
 body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var(--ink);background:#fff;font-size:14px;line-height:1.45}
 .in{padding:0 40px}
 /* 헤더 */
-.hd{background:#fff;position:sticky;top:0;z-index:20}
+.hd{background:#fff;position:relative;z-index:20}
 .hd .top{min-height:96px;display:grid;grid-template-columns:minmax(190px,1fr) auto minmax(250px,1fr);align-items:center;gap:24px}
 .hd .logo{display:flex;align-items:center;text-decoration:none}
 .hd .logo img{display:block;width:174px;height:auto}
@@ -34,8 +34,10 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .quick-links a{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:48px}
 .quick-links svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .quick-links span{font-size:11px;color:var(--sub)}
-.sbar-wrap{background:linear-gradient(to bottom,#fff 0%,#fff 18%,#99B7F9 100%);padding:6px 0 28px;border-bottom:1px solid #99B7F9}
-.sbar{max-width:850px;margin:0 auto;height:66px;border:1px solid #DDD;border-radius:999px;box-shadow:0 3px 12px rgba(0,0,0,.1);display:grid;grid-template-columns:1fr 1fr 1fr 66px;align-items:center;background:#fff}
+.travel-hero{position:relative;width:100%;overflow:hidden}
+.travel-hero img{display:block;width:100%;height:auto}
+.sbar-wrap{position:relative;z-index:3;background:transparent;padding:0 0 34px;margin-top:-34px;border:0}
+.sbar{width:min(1120px,calc(100% - 40px));margin:0 auto;height:66px;border:1px solid #DDD;border-radius:999px;box-shadow:0 10px 28px rgba(0,0,0,.16);display:grid;grid-template-columns:1fr 1fr 1fr 66px;align-items:center;background:#fff}
 .sbar>div,.sbar>.pref-field{padding:0 32px;border-right:1px solid #DDD}
 .sbar>.pref-field{display:block;position:relative;cursor:pointer;text-align:left}
 .sbar>.pref-field::after{content:"";position:absolute;right:32px;bottom:7px;width:6px;height:6px;border-right:1.5px solid var(--sub);border-bottom:1.5px solid var(--sub);transform:rotate(45deg);pointer-events:none}
@@ -81,6 +83,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .ft a{display:block;font-size:14px;margin-bottom:10px}
 .ft .bot{display:flex;justify-content:space-between;border-top:1px solid #DDD;margin-top:24px;padding-top:20px;font-size:13px;color:var(--ink)}
 @media (max-width:860px){
+  .travel-hero{height:280px}.travel-hero img{width:100%;height:100%;object-fit:cover;object-position:center}.sbar-wrap{margin-top:-26px;padding-bottom:28px}
   .in{padding:0 20px}.hd .top{grid-template-columns:auto 1fr;min-height:72px;gap:12px}.hd .logo img{width:132px}.hd .r{display:none}.tabs{justify-content:flex-end;gap:10px}.tabs a{gap:4px;font-size:12px;padding:10px 0}.tabs img{width:28px;height:28px}
   .sbar{grid-template-columns:1fr 1fr 1fr 48px;height:64px;margin:0 12px}.sbar>div,.sbar>.pref-field{padding:0 12px}.sbar>a{width:42px;height:42px}.sbar span,.sbar select{font-size:12px}
   .cards{grid-template-columns:repeat(7,42%);overflow-x:auto}
@@ -114,6 +117,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
       </div>
     </div>
   </div>
+  <div class="travel-hero"><img src="assets/main-travel-hero.png" alt="계획이 바뀌어도 여행은 계속되니까, 국내 여행 코스 만들기"></div>
   <div class="sbar-wrap"><div class="sbar">
     <div><b>어디로</b><span>여행지 검색</span></div>
     <div><b>누구와</b><span>친구 3명</span></div>
