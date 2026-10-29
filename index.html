@@ -50,7 +50,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .quick-links span{font-size:11px;color:var(--sub)}
 .travel-hero{position:relative;width:100%;overflow:hidden}
 .travel-hero img{display:block;width:100%;height:auto}
-.sbar-wrap{position:relative;z-index:3;background:transparent;padding:0 0 34px;margin-top:-34px;border:0}
+.sbar-wrap{position:relative;z-index:3;background:transparent;padding:0 0 12px;margin-top:-34px;border:0}
 .sbar{width:min(900px,calc(100% - 40px));margin:0 auto;height:66px;border:1px solid #DDD;border-radius:999px;box-shadow:0 10px 28px rgba(0,0,0,.16);display:grid;grid-template-columns:1fr 1fr 1fr 66px;align-items:center;background:#fff}
 .sbar>div,.sbar>.pref-field{padding:0 32px;border-right:1px solid #DDD}
 .sbar>.pref-field{display:block;position:relative;cursor:pointer;text-align:left}
@@ -62,6 +62,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .sbar>a svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2.8;stroke-linecap:round}
 /* 줄 제목 */
 .row{margin-top:40px}
+main>.row:first-child{margin-top:18px}
 .rh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
 .rh h2{font-size:22px;font-weight:600;margin:0;display:flex;align-items:center;gap:8px;letter-spacing:-.02em}
 .rh h2 i{width:28px;height:28px;border-radius:50%;background:var(--chip);font-style:normal;font-size:14px;display:grid;place-items:center}
@@ -118,7 +119,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .ft-social .youtube{fill:currentColor;stroke:none}
 .ft-copy{margin:0;color:#777;font-size:12px;text-align:right}
 @media (max-width:860px){
-  .travel-hero{height:280px}.travel-hero img{width:100%;height:100%;object-fit:cover;object-position:center}.sbar-wrap{margin-top:-26px;padding-bottom:28px}
+  .travel-hero{height:280px}.travel-hero img{width:100%;height:100%;object-fit:cover;object-position:center}.sbar-wrap{margin-top:-26px;padding-bottom:10px}
   .in{padding:0 20px}.hd .top{grid-template-columns:auto 1fr;min-height:56px;gap:12px}.right-actions{gap:8px}.right-actions .join-link{padding:7px 10px}.hd .r{display:none}.tabs{justify-content:flex-end;gap:10px}.tabs a{gap:4px;font-size:12px;padding:10px 0}.tabs img{width:28px;height:28px}
   .sbar{grid-template-columns:1fr 1fr 1fr 48px;height:64px;margin:0 12px}.sbar>div,.sbar>.pref-field{padding:0 12px}.sbar>a{width:42px;height:42px}.sbar b,.sbar>.pref-field>b,.sbar span,.sbar select{font-size:12px}
   .cards{grid-template-columns:repeat(7,42%);overflow-x:auto}.course-track{display:flex;overflow:visible}.course-track .card{flex-basis:42%}
