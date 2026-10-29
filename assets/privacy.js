@@ -54,7 +54,7 @@
         destination: destination
       });
     }
-    if (typeof window.fbq === 'function') window.fbq('track', 'Lead');
+    if (window.fbq) fbq('track', 'Lead');
     location.replace('result.html');
   });
 
@@ -72,6 +72,7 @@
           destination: (document.getElementById('f-select') || {}).value || ''
         });
       }
+      if (window.fbq) fbq('trackCustom', 'lead_form_submit_attempt');
       open('submit');
     });
   }
