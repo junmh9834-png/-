@@ -89,6 +89,9 @@ main>.row:first-child{margin-top:18px}
 .pet-friendly-guide img{display:block;width:100%;height:auto}
 .feature-guide{margin-top:40px}
 .feature-guide img{display:block;width:100%;height:auto}
+.howto-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.howto-grid img{display:block;width:100%;height:auto;border-radius:18px}
+@media (max-width:860px){.howto-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
 /* 신청 */
 .apply{margin:56px -40px 0;border:0;min-height:clamp(320px,28vw,520px);padding:32px max(40px,6vw);display:flex;align-items:center;justify-content:flex-end;background:url("assets/lead-collection-bg-350-v2.png") center/cover no-repeat}
 .apply>div:first-child{display:none}
@@ -202,10 +205,11 @@ alt=""
 
 <section class="row">
   <div class="rh"><h2>이렇게 써요 <i>→</i></h2></div>
-  <div class="cards" style="grid-template-columns:repeat(3,1fr)">
-    <div class="card"><div class="pic" style="aspect-ratio:16/10"><div class="ph "><span><span class="todo">앱 UXUI 화면</span></span></div></div><b>1. 취향 입력</b><small>누구와, 얼마로, 무엇을 하고 싶은지 고릅니다.</small></div>
-    <div class="card"><div class="pic" style="aspect-ratio:16/10"><div class="ph "><span>코스 받기 화면</span></div></div><b>2. 코스 받기</b><small>추천 코스 중 마음에 드는 것을 고릅니다.</small></div>
-    <div class="card"><div class="pic" style="aspect-ratio:16/10"><div class="ph "><span>예약·출발 화면</span></div></div><b>3. 예약·출발</b><small>필요한 예약을 끝내고 떠납니다.</small></div>
+  <div class="howto-grid">
+    <img src="assets/howto-market-360.png" alt="수원남문시장 전통시장 K-관광마켓 안내">
+    <img src="assets/howto-garden-361.png" alt="전남 수목원과 정원 스탬프 투어 안내">
+    <img src="assets/howto-challenge-362.png" alt="경상도 인증샷 챌린지 안내">
+    <img src="assets/howto-bambam-356.png" alt="대전 대한민국 밤밤 페스타 안내">
   </div>
 </section>
 
