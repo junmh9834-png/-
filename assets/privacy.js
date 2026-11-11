@@ -48,6 +48,7 @@
     wipe();
     // 이름·연락처는 보내지 않고 선택한 여행지만 비식별 파라미터로 전송합니다.
     if (typeof window.gtag === 'function') {
+      if (window.sendLeadLog) window.sendLeadLog();
       window.gtag('event', 'generate_lead', {
         lead_source: 'website_launch_notification',
         lead_type: 'app_launch_notification',
@@ -81,3 +82,4 @@
   var rp = document.querySelector('.review-panel button');
   if (rp) rp.addEventListener('click', function () { rp.parentNode.remove(); });
 })();
+
